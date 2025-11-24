@@ -1,0 +1,19 @@
+# Cargo aliases for performance monitoring
+[alias]
+# Run testing binary with dhat heap profiler
+run-dhat = "run -p rust-hp-minitoring-cookie-cutter --bin testing --features dhat-heap"
+
+# Run testing binary with tokio console (requires RUSTFLAGS to be set)
+run-tokio = "run -p rust-hp-minitoring-cookie-cutter --bin testing"
+
+# Run testing binary with both dhat and tokio console (requires RUSTFLAGS to be set)
+run-monitor = "run -p rust-hp-minitoring-cookie-cutter --bin testing --features dhat-heap"
+
+# Build testing binary with dhat
+build-dhat = "build -p rust-hp-minitoring-cookie-cutter --bin testing --features dhat-heap"
+
+# Build testing binary with tokio console support
+build-tokio = "build -p rust-hp-minitoring-cookie-cutter --bin testing"
+
+# Run benchmarks
+bench = "bench -p rust-hp-minitoring-cookie-cutter"

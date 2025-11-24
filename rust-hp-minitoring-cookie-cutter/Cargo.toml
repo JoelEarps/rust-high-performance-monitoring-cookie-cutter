@@ -1,0 +1,27 @@
+[package]
+name = "rust-hp-minitoring-cookie-cutter"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "testing"
+path = "src/bin/testing.rs"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+console-subscriber = "0.1"
+dhat = { version = "0.3", optional = true }
+
+[features]
+default = []
+dhat-heap = ["dhat"]
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "benchmark"
+harness = false
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(tokio_unstable)'] }

@@ -1,0 +1,3 @@
+[workspace]
+members = ["rust-hp-minitoring-cookie-cutter"]
+resolver = "2"
